@@ -1,4 +1,9 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public abstract class Aeronave {
     private String codigo;
@@ -49,6 +54,8 @@ public abstract class Aeronave {
         return fechaentrega;
     }
 
+
+
     public static void main(String[] args) {
         ArrayList<Aeronave> tablaAeronave = new ArrayList<>();
 
@@ -76,6 +83,7 @@ public abstract class Aeronave {
         tablaAeronave.add(dron2);
         tablaAeronave.add(jet1);
         tablaAeronave.add(jet2);
+        tablaAeronave.sort(Comparator.comparing(Aeronave -> LocalDate.parse(Aeronave.getFechaentrega(), DateTimeFormatter.ofPattern("MM-dd-yyyy"))));
 
     }
 }

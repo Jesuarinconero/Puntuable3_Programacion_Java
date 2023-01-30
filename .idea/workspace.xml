@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8daea48e-7a99-475b-9312-b017bdcdf7ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aeronave.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AvComGran.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AvComMed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/avionetas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cohetes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/drones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jettprivado.java" afterDir="false" />
+    <list default="true" id="8daea48e-7a99-475b-9312-b017bdcdf7ec" name="Changes" comment="Hacer constructor">
+      <change afterPath="$PROJECT_DIR$/src/Propulsor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aeronave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aeronave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AvComGran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComGran.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AvComMed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComMed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/avionetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avionetas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cohetes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cohetes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jettprivado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jettprivado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -61,11 +61,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674546109672</updated>
-      <workItem from="1675066266413" duration="1766000" />
+      <workItem from="1675066266413" duration="11535000" />
     </task>
+    <task id="LOCAL-00001" summary="Hacer constructor">
+      <created>1675068787666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675068787666</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Hacer constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hacer constructor" />
   </component>
 </project>

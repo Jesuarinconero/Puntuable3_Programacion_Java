@@ -1,3 +1,4 @@
+import javax.sound.midi.Soundbank;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -26,7 +27,9 @@ public abstract class Aeronave {
         this.precioventa = precioventa;
 
     }
-
+public  String getCodigo(){
+        return codigo;
+}
     public String getFechaentrega() {
         return fechaentrega;
 
@@ -84,6 +87,12 @@ public abstract class Aeronave {
         tablaAeronave.add(jet1);
         tablaAeronave.add(jet2);
         tablaAeronave.sort(Comparator.comparing(Aeronave -> LocalDate.parse(Aeronave.getFechaentrega(), DateTimeFormatter.ofPattern("MM-dd-yyyy"))));
-
+        for (int i= 0; i< tablaAeronave.size(); i++ ){
+            Aeronave aeronave = tablaAeronave.get(i);
+             String nombreAeronave = aeronave.get;
+             String codigoAeronave = aeronave.getCodigo();
+            System.out.println(nombreAeronave);
+            System.out.println(codigoAeronave);
+        }
     }
 }

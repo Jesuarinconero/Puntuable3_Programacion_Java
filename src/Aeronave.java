@@ -25,14 +25,10 @@ public  class Aeronave implements Propulsor {
         this.coste = coste;
         this.precioventa = precioventa;
 
-    }
-
-    public void Fechaentrega(Aeronave aeronave,int i) {
-        System.out.println("Esta fábrica construyó su primera aeronave, una " +aeronave.getClass().getName() + ", el " +aeronave.getformdate());
-
-
 
     }
+
+
 
     public void propul() {
     }
@@ -44,6 +40,7 @@ public  class Aeronave implements Propulsor {
 
     public double facturacion() {
 
+
         return precioventa - coste;
     }
 
@@ -52,6 +49,7 @@ public  class Aeronave implements Propulsor {
     }
 
     public String getformdate() {
+
         return fechaentrega;
     }
 
@@ -85,33 +83,56 @@ public  class Aeronave implements Propulsor {
         tablaAeronave.add(jet2);
         tablaAeronave.sort(Comparator.comparing(Aeronave -> LocalDate.parse(Aeronave.getformdate(), DateTimeFormatter.ofPattern("MM-dd-yyyy"))));
         System.out.println("\n\t\033[4mPROGRAMA AERONAVES\033[0m\t");
+        System.out.println();
 
 
         for (int i = 0; i < tablaAeronave.size(); i++) {
             Aeronave aeronave = tablaAeronave.get(i);
-            String nombreAeronave = aeronave.getClass().getName();
+            aeronave.Fechaentrega(aeronave,i);
+            aeronave.Horasbenif(aeronave,i);
+            aeronave.propul();
 
-            Integer horastrabajo = aeronave.gettotalHoras();
-            Integer capacidaddepasajeros = aeronave.getCapacidadpasajeros();
-
-            System.out.println();
-            if (i == 0) {
-                System.out.println(aeronave.fechaentrega + ".\n" + "Esto supuso " + horastrabajo + " horas tiene una generando un beneficio de "  );
-                aeronave.propul();
-            } else if (aeronave.getClass().getName().matches("^a.*")){
-                System.out.println(aeronave.fechaentrega + "\n"+ "Esto supuso "+horastrabajo+ " horas tiene una generando un beneficio de "+" " + (aeronave.getCapacidadpasajeros() == 0 ? "." :  "\n"+"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
-                aeronave.propul();
-            } else if (aeronave.getClass().getName().matches("^A.*")){
-                System.out.println(aeronave.fechaentrega + "\n"+"Esto supuso "+horastrabajo+ " horas tiene una generando un beneficio de "  + (aeronave.getCapacidadpasajeros() == 0 ? "." : "\n" +"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
-                aeronave.propul();
-            }
-            else {
-                System.out.println(aeronave.fechaentrega + "\n"+"Esto supuso " +horastrabajo+ " horas tiene una generando un beneficio de " + (aeronave.getCapacidadpasajeros() == 0 ? "." : "\n"+"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
-                aeronave.propul();
-            }
 
 
         }
+    }
+
+public void Horasbenif(Aeronave aeronave, int i ){
+    if (i == 0) {
+        System.out.println("Esto supuso " + gettotalHoras() + " horas tiene una generando un beneficio de "+facturacion()  );
+
+    } else if (aeronave.getClass().getName().matches("^a.*")){
+
+        System.out.println("Esto supuso "+gettotalHoras() + " horas tiene una generando un beneficio de "+facturacion()+ "" + (aeronave.getCapacidadpasajeros() == 0 ? "." :  "\n"+"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
+
+    } else if (aeronave.getClass().getName().matches("^A.*")){
+
+        System.out.println("Esto supuso "+gettotalHoras() + " horas tiene una generando un beneficio de "+facturacion()+ ""  + (aeronave.getCapacidadpasajeros() == 0 ? "." : "\n" +"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
+
+    }
+    else {
+
+        System.out.println("Esto supuso " +gettotalHoras() + " horas tiene una generando un beneficio de "+facturacion()+ "" + (aeronave.getCapacidadpasajeros() == 0 ? "." : "\n"+"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
+
+    }
+}
+
+    public void Fechaentrega(Aeronave aeronave, int i) {
+            if (i==0){
+                System.out.println("Esta fábrica construyó su primera aeronave, una " +aeronave.getClass().getName() + ", el " +aeronave.getformdate());
+            }
+            else if (aeronave.getClass().getName().matches("^a.*")){
+                System.out.println("Después construyó una "+aeronave.getClass().getName()+ " el "+aeronave.getformdate());
+            }
+            else if (aeronave.getClass().getName().matches("^A.*")){
+
+                System.out.println( "Después construyó una "+aeronave.getClass().getName()+ " el "+aeronave.getformdate());
+
+            } else  {
+                System.out.println( "Después construyó un "+aeronave.getClass().getName()+ " el "+aeronave.getformdate());
+            }
+
+
     }
 
 

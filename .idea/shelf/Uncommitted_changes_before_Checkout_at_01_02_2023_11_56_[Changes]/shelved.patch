@@ -1,0 +1,130 @@
+Index: src/Aeronave.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.time.LocalDate;\r\nimport java.time.format.DateTimeFormatter;\r\nimport java.util.ArrayList;\r\nimport java.util.Comparator;\r\n\r\npublic abstract class Aeronave {\r\n    //Variables\r\n    private String codigo;\r\n    private String fechaentrega;\r\n    private String L2GA;\r\n    private int horastrabajo;\r\n    private int horastrabajoempleada;\r\n    private int capacidadpasajeros;\r\n    private double coste;\r\n    private double precioventa;\r\n//Constructor\r\n    public Aeronave(String codigo, String fechaentrega, String LG2A, int horastrabajo, int horastrabajoempleada, int capacidadpasajeros, double coste, double precioventa) {\r\n        this.codigo = codigo;\r\n        this.fechaentrega = fechaentrega;\r\n        this.L2GA = LG2A;\r\n        this.horastrabajo = horastrabajo;\r\n        this.horastrabajoempleada = horastrabajoempleada;\r\n        this.capacidadpasajeros = capacidadpasajeros;\r\n        this.coste = coste;\r\n        this.precioventa = precioventa;\r\n\r\n    }\r\n    public String getFechaentrega() {\r\n        return fechaentrega;\r\n\r\n    }\r\n\r\n    public abstract void propul();\r\n\r\n    public int getCapacidadpasajeros() {\r\n        return capacidadpasajeros;\r\n    }\r\n\r\n\r\n    public double getfacturacion() {\r\n\r\n       return precioventa-coste;\r\n    }\r\n\r\n    public int gettotalHoras() {\r\n        return horastrabajoempleada + horastrabajo;\r\n    }\r\n\r\n    public String getformdate() {\r\n        return fechaentrega;\r\n    }\r\n\r\n\r\n\r\n    public static void main(String[] args) {\r\n        ArrayList<Aeronave> tablaAeronave = new ArrayList<>();\r\n\r\n        AvComGran avComGran1 = new AvComGran(\"AG001\", \"12-31-2008\", \"L2GA\", 289455, 150, 2300000, 300, 50000);\r\n        AvComMed avComMed1 = new AvComMed(\"AM001\", \"12-26-2006\", \"L2GA\", 22785, 120, 175000, 3258.63,800241.25);\r\n        avioneta avioneta1 = new avioneta(\"AV001\", \"09-21-2008\", \"L2GA\", 289455, 8, 75000, 3250, 25041);\r\n        cohete cohete1 = new cohete(\"CH001\", \"08-18-2022\", \"L2GA\", 22785, 0, 1700000,20785 ,2500000  );\r\n        dron dron1 = new dron(\"DR001\", \"07-14-2008\", \"L2GA\", 205, 0, 500, 1450, 28500);\r\n        jettprivado jet1 = new jettprivado(\"JT001\", \"06-13-2008\", \"L2GA\", 10550, 6, 400000, 25000, 126052);\r\n        AvComGran avComGran2 = new AvComGran(\"AG002\", \"05-06-2012\", \"L2GA\", 289455, 150, 2300000, 2000, 45123);\r\n        AvComMed avComMed2 = new AvComMed(\"AM002\", \"04-02-2018\", \"L2GA\", 22785, 120, 175000, 84520, 6581623);\r\n        avioneta avioneta2 = new avioneta(\"AV002\", \"03-28-2005\", \"L2GA\", 289455, 8, 75000, 458223, 28945452);\r\n        cohete cohete2 = new cohete(\"CH002\", \"02-22-2017\", \"L2GA\", 22785, 0, 1700000, 2560, 20512);\r\n        dron dron2 = new dron(\"DR002\", \"01-18-2012\", \"L2GA\", 205, 0, 500, 23000, 695652);\r\n        jettprivado jet2 = new jettprivado(\"JT002\", \"12-13-2015\", \"L2GA\", 10550, 6, 400000, 300, 952);\r\n        tablaAeronave.add(avComGran1);\r\n        tablaAeronave.add(avComGran2);\r\n        tablaAeronave.add(avComMed1);\r\n        tablaAeronave.add(avComMed2);\r\n        tablaAeronave.add(avioneta1);\r\n        tablaAeronave.add(avioneta2);\r\n        tablaAeronave.add(cohete1);\r\n        tablaAeronave.add(cohete2);\r\n        tablaAeronave.add(dron1);\r\n        tablaAeronave.add(dron2);\r\n        tablaAeronave.add(jet1);\r\n        tablaAeronave.add(jet2);\r\n        tablaAeronave.sort(Comparator.comparing(Aeronave -> LocalDate.parse(Aeronave.getFechaentrega(), DateTimeFormatter.ofPattern(\"MM-dd-yyyy\"))));\r\n        for (int i= 0; i< tablaAeronave.size(); i++ ){\r\n            Aeronave aeronave = tablaAeronave.get(i);\r\n             String nombreAeronave = aeronave.getClass().getName();\r\n             String fechaAeronave = aeronave.getFechaentrega();\r\n             Integer horastrabajo = aeronave.gettotalHoras();\r\n             Integer capacidaddepasajeros = aeronave.getCapacidadpasajeros();\r\n             double beneficios = aeronave.getfacturacion();\r\n             System.out.println();\r\n             if(i==0){\r\n                 System.out.println(\"Esta fábrica construyó su primera aeronave, una \"+nombreAeronave+ \", el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \" +beneficios);\r\n             }\r\n             else if(i==1){\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==2) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==3) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==4) {\r\n                 System.out.println(\" Después construyó una \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==5) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==6) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==7) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==8) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==9) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==10) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             } else if (i==11) {\r\n                 System.out.println(\" Después construyó un \" +nombreAeronave+  \" el \"+fechaAeronave+ \".\\n\" +\r\n                         \"Esto supuso \"+horastrabajo+ \" horas de trabajo tiene una generando un beneficio de \"+beneficios);\r\n             }\r\n\r\n\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Aeronave.java b/src/Aeronave.java
+--- a/src/Aeronave.java	
++++ b/src/Aeronave.java	
+@@ -2,8 +2,9 @@
+ import java.time.format.DateTimeFormatter;
+ import java.util.ArrayList;
+ import java.util.Comparator;
++import java.util.Iterator;
+ 
+-public abstract class Aeronave {
++public abstract class Aeronave implements Propulsor {
+     //Variables
+     private String codigo;
+     private String fechaentrega;
+@@ -30,7 +31,7 @@
+ 
+     }
+ 
+-    public abstract void propul();
++
+ 
+     public int getCapacidadpasajeros() {
+         return capacidadpasajeros;
+@@ -88,44 +89,13 @@
+              Integer capacidaddepasajeros = aeronave.getCapacidadpasajeros();
+              double beneficios = aeronave.getfacturacion();
+              System.out.println();
+-             if(i==0){
+-                 System.out.println("Esta fábrica construyó su primera aeronave, una "+nombreAeronave+ ", el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de " +beneficios);
+-             }
+-             else if(i==1){
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==2) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==3) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==4) {
+-                 System.out.println(" Después construyó una " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==5) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==6) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==7) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==8) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==9) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==10) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             } else if (i==11) {
+-                 System.out.println(" Después construyó un " +nombreAeronave+  " el "+fechaAeronave+ ".\n" +
+-                         "Esto supuso "+horastrabajo+ " horas de trabajo tiene una generando un beneficio de "+beneficios);
+-             }
++           Iterator <Aeronave> it = tablaAeronave.iterator();
++           while (it.hasNext()){
++              System.out.println(nombreAeronave);
++              break;
++
++
++           }
+ 
+ 
+         }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8daea48e-7a99-475b-9312-b017bdcdf7ec\" name=\"Changes\" comment=\"Tabla ordenada Recorrer tabla\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Aeronave.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Aeronave.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/avionetas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/avioneta.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/cohetes.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/cohete.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/drones.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/dron.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2KlPHLPiP9KndsVEp6gWANC7yhw\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"C:/Users/damda/IdeaProjects/Puntuable3_Programacion_Java\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8daea48e-7a99-475b-9312-b017bdcdf7ec\" name=\"Changes\" comment=\"\" />\r\n      <created>1674546109672</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1674546109672</updated>\r\n      <workItem from=\"1675066266413\" duration=\"13545000\" />\r\n      <workItem from=\"1675085147818\" duration=\"7000\" />\r\n      <workItem from=\"1675149912295\" duration=\"1163000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Hacer constructor\">\r\n      <created>1675068787666</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675068787666</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Hacer el ordenador  de tabla\">\r\n      <created>1675083357877</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675083357877</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Tabla ordenada\">\r\n      <created>1675084812972</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675084812972</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Tabla ordenada Recorrer tabla\">\r\n      <created>1675085130286</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675085130286</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Hacer constructor\" />\r\n    <MESSAGE value=\"Hacer el ordenador  de tabla\" />\r\n    <MESSAGE value=\"Tabla ordenada\" />\r\n    <MESSAGE value=\"Tabla ordenada Recorrer tabla\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Tabla ordenada Recorrer tabla\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -7,9 +7,6 @@
+     <list default="true" id="8daea48e-7a99-475b-9312-b017bdcdf7ec" name="Changes" comment="Tabla ordenada Recorrer tabla">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Aeronave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aeronave.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/avionetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avioneta.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/cohetes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cohete.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/drones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dron.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -25,6 +22,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -90,7 +92,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1675085130286</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Tabla ordenada Recorrer tabla">
++      <created>1675247629563</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1675247629563</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

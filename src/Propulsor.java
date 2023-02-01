@@ -1,4 +1,4 @@
 public interface Propulsor {
-    public void propul();
+    void propul();
 }
 

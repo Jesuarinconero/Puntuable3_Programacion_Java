@@ -8,7 +8,7 @@ public class dron extends Aeronave implements Propulsor {
 
 
     public void propul() {
-        System.out.println("Los drones son electricos ");
+        System.out.println("Esta aeronave utiliza electricidad.\n");
     }
 }
 

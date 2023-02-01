@@ -3,6 +3,6 @@ public class AvComMed extends Aeronave implements Propulsor{
         super(codigo,fechaentrega,LG2A,horastrabajo,horastrabajoempleada,capacidadpasajeros,coste,precioventa);
     }
     public void propul(){
-
+        System.out.println("Esta aeronave utiliza queroxeno.\n ");
     }
 }

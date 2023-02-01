@@ -6,6 +6,6 @@ public class jettprivado extends Aeronave implements Propulsor {
 
 
     public void propul() {
-
+        System.out.println("Esta aeronave utiliza queroxeno.\n ");
     }
 }

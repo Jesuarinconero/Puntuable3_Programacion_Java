@@ -7,6 +7,13 @@
     <list default="true" id="8daea48e-7a99-475b-9312-b017bdcdf7ec" name="Changes" comment="Tabla ordenada Recorrer tabla">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aeronave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aeronave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AvComGran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComGran.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AvComMed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComMed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Propulsor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Propulsor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/avioneta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avioneta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cohete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cohete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jettprivado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jettprivado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Prueba" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675085130286</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tabla ordenada Recorrer tabla">
+      <created>1675250097268</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675250097268</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,5 +118,19 @@
     <MESSAGE value="Tabla ordenada" />
     <MESSAGE value="Tabla ordenada Recorrer tabla" />
     <option name="LAST_COMMIT_MESSAGE" value="Tabla ordenada Recorrer tabla" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Aeronave.java</url>
+          <line>85</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

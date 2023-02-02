@@ -8,6 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_02_2023_11_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_02_2023_11_56__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aeronave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aeronave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AvComGran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComGran.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AvComMed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComMed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/avioneta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avioneta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cohete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cohete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jettprivado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jettprivado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +70,7 @@
       <workItem from="1675066266413" duration="13545000" />
       <workItem from="1675085147818" duration="7000" />
       <workItem from="1675149912295" duration="1163000" />
+      <workItem from="1675334400328" duration="2277000" />
     </task>
     <task id="LOCAL-00001" summary="Hacer constructor">
       <created>1675068787666</created>

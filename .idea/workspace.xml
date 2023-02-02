@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8daea48e-7a99-475b-9312-b017bdcdf7ec" name="Changes" comment="Tabla ordenada Recorrer tabla">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_02_2023_11_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_02_2023_11_56__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aeronave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aeronave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AvComGran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComGran.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AvComMed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvComMed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/avioneta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avioneta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cohete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cohete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jettprivado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jettprivado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +64,7 @@
       <workItem from="1675066266413" duration="13545000" />
       <workItem from="1675085147818" duration="7000" />
       <workItem from="1675149912295" duration="1163000" />
-      <workItem from="1675334400328" duration="2277000" />
+      <workItem from="1675334400328" duration="4956000" />
     </task>
     <task id="LOCAL-00001" summary="Hacer constructor">
       <created>1675068787666</created>
@@ -107,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675250097268</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tabla ordenada Recorrer tabla">
+      <created>1675337394575</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675337394575</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

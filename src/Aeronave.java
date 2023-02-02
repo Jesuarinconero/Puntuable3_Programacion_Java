@@ -37,20 +37,20 @@ public  class Aeronave implements Propulsor {
         return capacidadpasajeros;
     }
 
-
+public double getfacturaciontotal(ArrayList<Aeronave> tablaAeronave){
+    double facturacionTotal = 0;
+    for (Aeronave aeronave : tablaAeronave) {
+        facturacionTotal += aeronave.facturacion();
+    }
+    System.out.println("La facturación total de la compañía a día de hoy: "+facturacionTotal);
+    return facturacionTotal;
+}
     public double facturacion() {
 
-
-        return precioventa - coste;
+        return precioventa-coste;
     }
-public  int getsumatotal(Aeronave tablaAeronave, int i){
-    int sumatotal=0 ;
-    if (tablaAeronave.getClass().getName()=="avioneta"){
-        sumatotal=++horastrabajoempleada;
 
-    }
-    return sumatotal;
-}
+
     public int gettotalHoras(ArrayList<Aeronave> tablaAeronave) {
         int sumaTotal = 0;
         for (Aeronave aeronave : tablaAeronave) {
@@ -112,6 +112,7 @@ public  int getsumatotal(Aeronave tablaAeronave, int i){
             aeronave.propul();
             if (i==11){
                 aeronave.gettotalHoras(tablaAeronave);
+                aeronave.getfacturaciontotal(tablaAeronave);
             }
 
 

@@ -29,7 +29,7 @@ public  class Aeronave implements Propulsor {
 
     }
 
-    DecimalFormat formatoeuro = new DecimalFormat("###,###.## € ");
+    DecimalFormat formatoeuro = new DecimalFormat("###,###.##€ ");
     DecimalFormat formatohoras = new DecimalFormat("###,###");
 
     public void propul() {
@@ -82,18 +82,18 @@ public String factuarionImp(){
 
         ArrayList<Aeronave> tablaAeronave = new ArrayList<>();
 
-        AvComGran avComGran1 = new AvComGran("AG001", "12-31-2008", "L2GA", 289, 380, 2300000, 3000, 50000);
-        AvComMed avComMed1 = new AvComMed("AM001", "12-26-2009", "L2GA", 22785, 3982, 175000, 3250, 800241);
-        avioneta avioneta1 = new avioneta("AV001", "09-21-2008", "L2GA", 0, 14472, 75000, 3250, 250412);
-        cohete cohete1 = new cohete("CH001", "08-18-2022", "L2GA", 22785, 14521, 0, 20785, 25000.25);
+        AvComGran avComGran1 = new AvComGran("AG001", "12-31-2008", "L2GA", 289, 380, 2300, 3000, 50000);
+        AvComMed avComMed1 = new AvComMed("AM001", "12-26-2009", "L2GA", 22785, 3982, 1750, 3250, 800241);
+        avioneta avioneta1 = new avioneta("AV001", "09-21-2008", "L2GA", 0, 14472, 75256, 3250, 250412);
+        cohete cohete1 = new cohete("CH001", "08-18-2022", "L2GA", 22785, 14521, 0, 2078, 25000.25);
         dron dron1 = new dron("DR001", "02-02-2008", "L2GA", 205, 456212, 0, 1450, 28500);
-        jettprivado jet1 = new jettprivado("JT001", "06-13-2008", "L2GA", 10550, 4562, 400000, 25000, 126052);
-        AvComGran avComGran2 = new AvComGran("AG002", "05-06-2012", "L2GA", 2894, 45621, 2300000, 2000, 45123);
-        AvComMed avComMed2 = new AvComMed("AM002", "04-02-2018", "L2GA", 22785, 453215, 175000, 845, 6581);
-        avioneta avioneta2 = new avioneta("AV002", "03-28-2014", "L2GA", 1, 144727, 75000, 458, 2894);
+        jettprivado jet1 = new jettprivado("JT001", "06-13-2008", "L2GA", 10550, 4562, 400, 25000, 126052);
+        AvComGran avComGran2 = new AvComGran("AG002", "05-06-2012", "L2GA", 2894, 45621, 23000, 2000, 45123);
+        AvComMed avComMed2 = new AvComMed("AM002", "04-02-2018", "L2GA", 22785, 453215, 1750, 845, 6581);
+        avioneta avioneta2 = new avioneta("AV002", "03-28-2014", "L2GA", 1, 144727, 7500, 458, 2894);
         cohete cohete2 = new cohete("CH002", "02-22-2017", "L2GA", 22785, 12514, 0, 2560, 20512);
         dron dron2 = new dron("DR002", "01-18-2012", "L2GA", 205, 32121, 0, 23000, 695652);
-        jettprivado jet2 = new jettprivado("JT002", "12-13-2015", "L2GA", 10550, 61456, 400000, 300, 952);
+        jettprivado jet2 = new jettprivado("JT002", "12-13-2015", "L2GA", 10550, 61456, 400, 300, 952);
         tablaAeronave.add(avComGran1);
         tablaAeronave.add(avComGran2);
         tablaAeronave.add(avComMed1);

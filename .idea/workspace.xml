@@ -63,8 +63,8 @@
       <workItem from="1675066266413" duration="13545000" />
       <workItem from="1675085147818" duration="7000" />
       <workItem from="1675149912295" duration="1163000" />
-      <workItem from="1675334400328" duration="7471000" />
-      <workItem from="1675407903675" duration="8304000" />
+      <workItem from="1675673164109" duration="605000" />
+      <workItem from="1675681294539" duration="1041000" />
     </task>
     <task id="LOCAL-00001" summary="Hacer constructor">
       <created>1675068787666</created>
@@ -101,28 +101,7 @@
       <option name="project" value="LOCAL" />
       <updated>1675250097268</updated>
     </task>
-    <task id="LOCAL-00006" summary="Tabla ordenada Recorrer tabla">
-      <created>1675337394575</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1675337394575</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Tabla ordenada Recorrer tabla">
-      <created>1675339992906</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1675339992906</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Tabla ordenada Recorrer tabla">
-      <created>1675416447164</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1675416447164</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

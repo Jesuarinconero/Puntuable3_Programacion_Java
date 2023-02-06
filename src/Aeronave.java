@@ -28,17 +28,17 @@ public  class Aeronave implements Propulsor {
 
 
     }
-
+//Objeto para el formato euro utilizamos el decimal y el de horas par reducir las horas
     DecimalFormat formatoeuro = new DecimalFormat("###,###.##€ ");
     DecimalFormat formatohoras = new DecimalFormat("###,###");
-
+//Interfaz
     public void propul() {
     }
-
+//Obtener la capacidad de pasajeros
     public int getCapacidadpasajeros() {
         return capacidadpasajeros;
     }
-
+//Metodo para obtener la facturacion total de la empresa
 public void getfacturaciontotal(ArrayList<Aeronave> tablaAeronave) {
     double facturacionTotal = 0;
 
@@ -50,14 +50,16 @@ public void getfacturaciontotal(ArrayList<Aeronave> tablaAeronave) {
     }
     System.out.println("La facturación total de la compañía a día de hoy: " +formatoeuro.format(facturacionTotal));
 }
+//Obtener la facturacion
     public double facturacion() {
         return precioventa-coste;
 
     }
+    //Metodo para obtener la facturacion en formato €
 public String factuarionImp(){
         return  formatoeuro.format(facturacion());
 }
-
+//Metodo para calcular el total de avionetas
     public void gettotalHoras(ArrayList<Aeronave> tablaAeronave) {
         int sumaTotal = 0;
         for (Aeronave aeronave : tablaAeronave) {
@@ -68,7 +70,7 @@ public String factuarionImp(){
         }
         System.out.println("El total de horas de trabajo empleadas en el tipo Avioneta fueron: "+formatohoras.format(sumaTotal));
     }
-
+//Cambiar el formato en fecha
     public String getformdate() {
         DateTimeFormatter originalFormat = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         DateTimeFormatter targetFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -79,9 +81,9 @@ public String factuarionImp(){
 
 
     public static void main(String[] args) {
-
+        //Creamos la tabla con ArrayList
         ArrayList<Aeronave> tablaAeronave = new ArrayList<>();
-
+         //Creamos los objetos de avioneta cohete dron etc
         AvComGran avComGran1 = new AvComGran("AG001", "12-31-2008", "L2GA", 289, 380, 2300, 3000, 50000);
         AvComMed avComMed1 = new AvComMed("AM001", "12-26-2009", "L2GA", 22785, 3982, 1750, 3250, 800241);
         avioneta avioneta1 = new avioneta("AV001", "09-21-2008", "L2GA", 0, 14472, 75256, 3250, 250412);
@@ -94,6 +96,7 @@ public String factuarionImp(){
         cohete cohete2 = new cohete("CH002", "02-22-2017", "L2GA", 22785, 12514, 0, 2560, 20512);
         dron dron2 = new dron("DR002", "01-18-2012", "L2GA", 205, 32121, 0, 23000, 695652);
         jettprivado jet2 = new jettprivado("JT002", "12-13-2015", "L2GA", 10550, 61456, 400, 300, 952);
+        //Los insertamos en la tabla aeronave
         tablaAeronave.add(avComGran1);
         tablaAeronave.add(avComGran2);
         tablaAeronave.add(avComMed1);
@@ -106,16 +109,20 @@ public String factuarionImp(){
         tablaAeronave.add(dron2);
         tablaAeronave.add(jet1);
         tablaAeronave.add(jet2);
+        //Comparador de fecha
         tablaAeronave.sort(Comparator.comparing(Aeronave -> LocalDate.parse(Aeronave.fechaentrega, DateTimeFormatter.ofPattern("MM-dd-yyyy"))));
+        //Titulo del programa
         System.out.println("\n\t\033[4mPROGRAMA AERONAVES\033[0m\t");
         System.out.println();
 
-
+        //For para recorrer la tabla
         for (int i = 0; i < tablaAeronave.size(); i++) {
+            //Llamamos a los metodos
             Aeronave aeronave = tablaAeronave.get(i);
             aeronave.Fechaentrega(aeronave,i);
             aeronave.Horasbenif(i);
             aeronave.propul();
+            //En la posicion final realiza esos metodos
             if (i==11){
                 aeronave.gettotalHoras(tablaAeronave);
                 aeronave.getfacturaciontotal(tablaAeronave);
@@ -134,7 +141,7 @@ public String factuarionImp(){
 
 
     }
-
+//Metodos horas beneficios
 public void Horasbenif( int i){
     if (i == 0) {
         System.out.println("Esto supuso " + formatohoras.format(horastrabajoempleada) + " horas tiene una generando un beneficio de " +factuarionImp());
@@ -146,14 +153,15 @@ public void Horasbenif( int i){
 
     }
 }
-
+//Metodo fecha entrega
     public void Fechaentrega(Aeronave aeronave, int i) {
+        //Posicion 0 imprime esta frase con su respectivo nombre y posicion
             if (i==0){
                 System.out.println("Esta fábrica construyó su primera aeronave, un " +aeronave.getClass().getName() + ", el " +aeronave.getformdate()+(aeronave.getCapacidadpasajeros() == 0 ? "." : ""+"Con una capacidad de " + aeronave.getCapacidadpasajeros() + " pasajeros."));
-            }
-            else if (aeronave.getClass().getName().equals("avioneta")){
+            }  //Si la aeronave es una avioneta  imprime esta frase con su respectivo nombre y posicion
+            else if (aeronave instanceof avioneta){
                 System.out.println("Después construyó una "+aeronave.getClass().getName()+ " el "+aeronave.getformdate()+(aeronave.getCapacidadpasajeros() == 0 ? "." : ""+" para " + aeronave.getCapacidadpasajeros() + " pasajeros."));
-            }
+            } //Si no es ninguno de los casos imprime eso
             else  {
                 System.out.println( "Después construyó un "+aeronave.getClass().getName()+ " el "+aeronave.getformdate()+(aeronave.getCapacidadpasajeros() == 0 ? "." : ""+" para " + aeronave.getCapacidadpasajeros() + " pasajeros."));
             }

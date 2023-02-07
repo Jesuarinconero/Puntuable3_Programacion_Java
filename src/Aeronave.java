@@ -48,7 +48,7 @@ public void getfacturaciontotal(ArrayList<Aeronave> tablaAeronave) {
 
 
     }
-    System.out.println("La facturación total de la compañía a día de hoy: " +formatoeuro.format(facturacionTotal));
+    System.out.println("La facturación total de la compañía a día de hoy: " +formatoeuro.format(facturacionTotal).replace(",","."));
 }
 //Obtener la facturacion
     public double facturacion() {
@@ -127,10 +127,6 @@ public String factuarionImp(){
                 aeronave.gettotalHoras(tablaAeronave);
                 aeronave.getfacturaciontotal(tablaAeronave);
             }
-
-
-
-
 
 
 
